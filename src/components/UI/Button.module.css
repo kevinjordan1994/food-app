@@ -1,0 +1,21 @@
+.button,
+.cart_button {
+  background-color: #411530;
+  color: #f5e8e4;
+  border-radius: 1rem;
+  border: 2px solid #411530;
+  display: inline-block;
+}
+
+.button:hover,
+.cart_button:hover {
+  background-color: #d1512d;
+  cursor: pointer;
+  border-color: #411530;
+  color: #411530;
+}
+
+.cart_button {
+  padding: 1rem;
+  font-size: 1.5rem;
+}
