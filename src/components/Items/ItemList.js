@@ -1,10 +1,13 @@
 import Item from "./Item";
-import styles from "../UI/Card.module.css";
+import card from "../UI/Card.module.css";
+import styles from "./ItemList.module.css";
 
 export default function ItemList(props) {
   return (
-    <div className={styles.card}>
-      <Item />
+    <div className={card.card}>
+      <div className={styles.item_list}>
+        <Item />
+      </div>
     </div>
   );
 }
