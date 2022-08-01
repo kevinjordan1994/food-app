@@ -1,5 +1,6 @@
 .button,
-.cart_button {
+.cart_button,
+.add {
   background-color: #411530;
   color: #f5e8e4;
   border-radius: 1rem;
@@ -13,9 +14,22 @@
   cursor: pointer;
   border-color: #411530;
   color: #411530;
+  font-weight: 500;
+}
+
+.add:hover {
+  background-color: #f5e8e4;
+  cursor: pointer;
+  border-color: #411530;
+  color: #411530;
 }
 
 .cart_button {
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   font-size: 1.5rem;
+}
+
+.add {
+  padding: 0.5rem 1rem;
+  width: 100%;
 }
