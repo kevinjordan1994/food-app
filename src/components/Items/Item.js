@@ -7,12 +7,12 @@ import { useContext } from "react";
 export default function Item(props) {
   const cart = useContext(Cart);
 
+  //TODO: Consider useReducer for the cart logic.
+
   const addToCart = (amount) => {
     const cost = amount * props.price;
     cart.totalPrice += cost;
-    for (let i = 0; i < amount; i++) {
-      cart.itemsInCart.push({ itemName: props.name, itemPrice: props.price });
-    }
+    cart.itemsInCart.push({ name: props.name, quantity: amount });
     console.log(cart);
   };
 
