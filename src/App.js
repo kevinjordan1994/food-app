@@ -3,16 +3,16 @@ import CartModal from "./components/Cart/CartModal";
 import Header from "./components/Header/Header";
 import ItemList from "./components/Items/ItemList";
 import Overview from "./components/Overview/Overview";
-import Cart from "./store/cart";
+import CartProvider from "./store/CartProvider";
 
 function App() {
   return (
-    <Cart.Provider value={{ itemsInCart: [], totalPrice: 0 }}>
+    <CartProvider>
       <Header />
       <Overview />
       <CartModal />
       <ItemList />
-    </Cart.Provider>
+    </CartProvider>
   );
 }
 
