@@ -6,7 +6,7 @@ export default function CartButton(props) {
   const cart = useContext(Cart);
   const amountOfItemsInCart = cart.itemsInCart
     .map((item) => {
-      return Number(item.quantity);
+      return Number(item.amount);
     })
     .reduce((a, b) => a + b, 0);
 

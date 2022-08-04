@@ -10,7 +10,6 @@ function App() {
     <CartProvider>
       <Header />
       <Overview />
-      <CartModal />
       <ItemList />
     </CartProvider>
   );

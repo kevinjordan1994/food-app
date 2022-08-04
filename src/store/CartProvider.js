@@ -25,7 +25,7 @@ export default function CartProvider(props) {
   const [cartState, dispatchCart] = useReducer(cartReducer, defaultCartState);
 
   const addItemToCartHandler = (item) => {
-    dispatchCart({ type: ACTIONS.ADD_ITEM, value: item });
+    dispatchCart({ type: ACTIONS.ADD_ITEM, item: item });
   };
 
   const removeItemFromCartHandler = (id) => {};
