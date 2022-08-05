@@ -1,6 +1,7 @@
 .button,
 .cart_button,
-.add {
+.add,
+.checkout {
   background-color: #eb1d36;
   color: #f5eddc;
   border-radius: 1rem;
@@ -8,8 +9,17 @@
   display: inline-block;
 }
 
+.cancel {
+  background-color: #f5eddc;
+  color: #eb1d36;
+  border-radius: 1rem;
+  border: 2px solid #eb1d36;
+  display: inline-block;
+}
+
 .button:hover,
-.cart_button:hover {
+.cart_button:hover,
+.checkout:hover {
   background-color: #f5eddc;
   cursor: pointer;
   border-color: #eb1d36;
@@ -32,4 +42,19 @@
 .add {
   padding: 0.5rem 1rem;
   width: 100%;
+}
+
+.cancel,
+.checkout {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+}
+
+.cancel:hover {
+  cursor: pointer;
+}
+
+.checkout,
+.cancel {
+  display: block;
 }

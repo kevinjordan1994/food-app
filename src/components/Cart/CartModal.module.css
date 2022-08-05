@@ -1,0 +1,25 @@
+.footer,
+.cart_meal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cart_meal {
+  border-bottom: 1px solid #222;
+  padding: 1rem 0;
+}
+
+.footer {
+  margin-top: 1.5rem;
+}
+
+.total {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.button_div {
+  display: flex;
+  gap: 0.5rem;
+}
