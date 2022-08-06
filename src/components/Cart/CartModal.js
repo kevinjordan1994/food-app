@@ -25,9 +25,9 @@ export default function CartModal(props) {
 
   const cartModal = (
     <>
-      <div className={styles.backdrop}></div>
+      <div className={styles.backdrop} onClick={closeModal}></div>
       <div className={styles.modal}>
-        <div className={card["card"]}>
+        <div className={card["modal_card"]}>
           {cart.itemsInCart.length > 0 ? cartList : <p>No items in cart.</p>}
           <div className={styles.footer}>
             <div className={styles.total}>Total: ${cart.totalPrice}</div>
