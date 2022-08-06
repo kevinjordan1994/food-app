@@ -8,9 +8,9 @@ import CartProvider from "./store/CartProvider";
 function App() {
   return (
     <CartProvider>
+      <CartModal />
       <Header />
       <Overview />
-      <CartModal />
       <ItemList />
     </CartProvider>
   );

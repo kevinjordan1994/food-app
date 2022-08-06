@@ -2,5 +2,5 @@
   display: flex;
   justify-content: space-between;
   padding-bottom: 3rem;
-  border-bottom: 4px dotted #411530;
+  border-bottom: 4px dotted rgba(0, 0, 0, 0.5);
 }

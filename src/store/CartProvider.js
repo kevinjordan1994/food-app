@@ -1,4 +1,4 @@
-import { useReducer } from "react";
+import { useReducer, useState } from "react";
 import Cart from "./cart";
 
 const ACTIONS = {
@@ -24,6 +24,7 @@ const cartReducer = (state, action) => {
 
 export default function CartProvider(props) {
   const [cartState, dispatchCart] = useReducer(cartReducer, defaultCartState);
+  const [cartVisible, toggleCart] = useState(false);
 
   const addItemToCartHandler = (item) => {
     dispatchCart({ type: ACTIONS.ADD_ITEM, item: item });
@@ -31,11 +32,18 @@ export default function CartProvider(props) {
 
   const removeItemFromCartHandler = (id) => {};
 
+  const toggleCartHandler = () => {
+    toggleCart((prev) => !prev);
+    console.log(cartVisible);
+  };
+
   const cart = {
     itemsInCart: cartState.items,
-    totalPrice: cartState.totalAmount,
+    totalPrice: cartState.totalAmount.toFixed(2),
     addItemToCart: addItemToCartHandler,
     removeItemFromCart: removeItemFromCartHandler,
+    checkCartVisible: cartVisible,
+    toggleCartModal: toggleCartHandler,
   };
 
   return <Cart.Provider value={cart}>{props.children}</Cart.Provider>;
