@@ -25,6 +25,13 @@ const cartReducer = (state, action) => {
     const updatedItems = state.items.concat(action.item);
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   }
+  if (action.type === ACTIONS.REMOVE_ITEM) {
+    //TODO: FIX ABILITY TO GO BELOW 0.
+    const targetMeal = state.items.find((meal) => meal.item === action.id);
+    const reducedAmount = state.totalAmount - targetMeal.price;
+    targetMeal.amount--;
+    return { items: state.items, totalAmount: reducedAmount };
+  }
   return defaultCartState;
 };
 
@@ -36,7 +43,9 @@ export default function CartProvider(props) {
     dispatchCart({ type: ACTIONS.ADD_ITEM, item: item });
   };
 
-  const removeItemFromCartHandler = (id) => {};
+  const removeItemFromCartHandler = (id) => {
+    dispatchCart({ type: ACTIONS.REMOVE_ITEM, id: id });
+  };
 
   const toggleCartHandler = () => {
     toggleCart((prev) => !prev);

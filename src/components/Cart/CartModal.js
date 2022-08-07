@@ -7,6 +7,12 @@ import styles from "./CartModal.module.css";
 
 export default function CartModal(props) {
   const cart = useContext(Cart);
+
+  const removeItemHandler = (e) => {
+    e.preventDefault();
+    cart.removeItemFromCart(e.target.value);
+  };
+
   const cartList = cart.itemsInCart.map((meal) => {
     return (
       <div className={styles.cart_meal} key={Math.random().toString()}>
@@ -14,6 +20,13 @@ export default function CartModal(props) {
           {meal.item} x {meal.amount}
         </h3>
         <h3>{meal.amount * meal.price}</h3>
+        <button
+          value={meal.item}
+          className={button.add}
+          onClick={removeItemHandler}
+        >
+          Remove
+        </button>
       </div>
     );
   });
