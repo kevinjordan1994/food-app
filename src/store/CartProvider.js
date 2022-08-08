@@ -26,11 +26,18 @@ const cartReducer = (state, action) => {
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   }
   if (action.type === ACTIONS.REMOVE_ITEM) {
-    //TODO: FIX ABILITY TO GO BELOW 0.
+    //TODO: FIND OUT WHY REDUCED AMOUNT IS BUGGY.
     const targetMeal = state.items.find((meal) => meal.item === action.id);
     const reducedAmount = state.totalAmount - targetMeal.price;
-    targetMeal.amount--;
-    return { items: state.items, totalAmount: reducedAmount };
+    if (targetMeal.amount > 1) {
+      targetMeal.amount--;
+      return { items: state.items, totalAmount: reducedAmount };
+    } else {
+      const updatedItems = state.items.filter(
+        (meal) => meal.item !== targetMeal.item
+      );
+      return { items: updatedItems, totalAmount: reducedAmount };
+    }
   }
   return defaultCartState;
 };
