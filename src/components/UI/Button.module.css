@@ -68,3 +68,25 @@
   width: 1.5rem;
   border-radius: 8px;
 }
+
+.bump {
+  animation: bump 0.5s linear;
+}
+
+@keyframes bump {
+  0% {
+    font-size: 1.5rem;
+  }
+  25% {
+    font-size: 2rem;
+  }
+  50% {
+    font-size: 2.5rem;
+  }
+  75% {
+    font-size: 2rem;
+  }
+  100% {
+    font-size: 1.5rem;
+  }
+}
