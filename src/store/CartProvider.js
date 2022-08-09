@@ -26,12 +26,12 @@ const cartReducer = (state, action) => {
     return { items: updatedItems, totalAmount: updatedTotalAmount };
   }
   if (action.type === ACTIONS.REMOVE_ITEM) {
-    //TODO: FIND OUT WHY REDUCED AMOUNT IS BUGGY.
     const targetMeal = state.items.find((meal) => meal.item === action.id);
     const reducedAmount = state.totalAmount - targetMeal.price;
+    const fixedAmount = reducedAmount.toFixed(2);
     if (targetMeal.amount > 1) {
       targetMeal.amount--;
-      return { items: state.items, totalAmount: reducedAmount };
+      return { items: state.items, totalAmount: +fixedAmount };
     } else {
       const updatedItems = state.items.filter(
         (meal) => meal.item !== targetMeal.item
