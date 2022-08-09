@@ -15,7 +15,12 @@ export default function CartModal(props) {
 
   const addItemHandler = (e) => {
     e.preventDefault();
-    cart.removeItemFromCart(e.target.value);
+    const targetMeal = cart.itemsInCart.find(
+      (meal) => meal.item === e.target.value
+    );
+    console.log(targetMeal);
+    const { item, price } = targetMeal;
+    cart.addItemToCart({ item: item, price: price, amount: 1 });
   };
 
   const cartList = cart.itemsInCart.map((meal) => {
