@@ -15,7 +15,7 @@ export default function ItemCartInfo(props) {
     <form className={styles.cart_info}>
       <div>
         <label>Amount: </label>
-        <input ref={amountRef} type="number" min="1" max="99" />
+        <input ref={amountRef} type="number" min="1" max="9" />
       </div>
       <div>
         <button onClick={addItemHandler} className={button.add}>

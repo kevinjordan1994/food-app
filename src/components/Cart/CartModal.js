@@ -13,20 +13,35 @@ export default function CartModal(props) {
     cart.removeItemFromCart(e.target.value);
   };
 
+  const addItemHandler = (e) => {
+    e.preventDefault();
+    cart.removeItemFromCart(e.target.value);
+  };
+
   const cartList = cart.itemsInCart.map((meal) => {
     return (
       <div className={styles.cart_meal} key={Math.random().toString()}>
-        <h3>
-          {meal.item} x {meal.amount}
-        </h3>
-        <h3>{meal.amount * meal.price}</h3>
-        <button
-          value={meal.item}
-          className={button.add}
-          onClick={removeItemHandler}
-        >
-          Remove
-        </button>
+        <div className={styles.meal_info}>
+          <h3>{meal.item}</h3>
+          <h3>${meal.amount * meal.price}</h3>
+        </div>
+        <div className={styles.change_amount}>
+          <button
+            value={meal.item}
+            className={button.change_amount}
+            onClick={removeItemHandler}
+          >
+            -
+          </button>
+          <p>{meal.amount}</p>
+          <button
+            value={meal.item}
+            className={button.change_amount}
+            onClick={addItemHandler}
+          >
+            +
+          </button>
+        </div>
       </div>
     );
   });

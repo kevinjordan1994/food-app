@@ -1,7 +1,8 @@
 .button,
 .cart_button,
 .add,
-.checkout {
+.checkout,
+.change_amount {
   background-color: #eb1d36;
   color: #f5eddc;
   border-radius: 1rem;
@@ -19,7 +20,8 @@
 
 .button:hover,
 .cart_button:hover,
-.checkout:hover {
+.checkout:hover,
+.change_amount:hover {
   background-color: #f5eddc;
   cursor: pointer;
   border-color: #eb1d36;
@@ -57,4 +59,12 @@
 .checkout,
 .cancel {
   display: block;
+}
+
+.change_amount {
+  text-align: center;
+  padding: 0 0.2rem;
+  font-size: 1.5rem;
+  width: 1.5rem;
+  border-radius: 8px;
 }
