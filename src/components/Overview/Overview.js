@@ -1,7 +1,8 @@
+import React from "react";
 import card from "../UI/Card.module.css";
 import styles from "./Overview.module.css";
 
-export default function Overview(props) {
+function Overview(props) {
   return (
     <div className={card.dark_card}>
       <div className={styles.overview}>
@@ -14,3 +15,5 @@ export default function Overview(props) {
     </div>
   );
 }
+
+export default React.memo(Overview);
